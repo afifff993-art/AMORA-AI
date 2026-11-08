@@ -18,7 +18,7 @@ void main() {
     expect(find.byType(ChoiceChip), findsNWidgets(5));
 
     final listening = find.widgetWithText(ChoiceChip, 'Listening');
-    await tester.ensureVisible(listening);
+    await tester.scrollUntilVisible(listening, 300, scrollable: find.byType(Scrollable).first);
     await tester.tap(listening);
     await tester.pump(const Duration(milliseconds: 300));
 
